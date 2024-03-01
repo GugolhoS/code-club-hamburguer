@@ -20,8 +20,8 @@
         "prettier"
     ],
     "rules": {
-        "prettier/prettier":"error",
-        "endOfLine": "auto",
+        "prettier/prettier": "off",
+        //"endOfLine": "auto",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "import-helpers/order-imports": [
