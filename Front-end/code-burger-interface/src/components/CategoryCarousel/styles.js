@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -37,7 +38,7 @@ export const Image = styled.img`
     border-radius: 10px;
 `
 
-export const Button = styled.button`
+export const Button = styled(Link)`
     margin-top: 16px;
     background: #9758a6;
     box-shadow: 0px 5px 10px rgba(151, 88, 166, .22),
@@ -61,4 +62,9 @@ export const Button = styled.button`
     &:active{
         opacity: 0.5;
     }
+
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `

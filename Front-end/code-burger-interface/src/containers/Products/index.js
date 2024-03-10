@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from "react";
-import { Navigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import ProductsLogo from '../../assets/products-logo.svg'
 import {CardProduct} from '../../components'
@@ -9,10 +9,13 @@ import formatCurrency from '../../utils/formatCurrency';
 import { Container, ProductsImg, CategoryButton, CategoriesMenu, ProductsContainer } from './styles';
 
 export function Products(){
+    const { state } = useLocation();
+    const categoryId = state?.categoryId || 0;
+    
     const [categories, setCategories] = useState([])
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
-    const [activeCategories, setActiveCategories] = useState(0)
+    const [activeCategories, setActiveCategories] = useState(categoryId)
 
     useEffect(() => {
         async function LoadCategories(){
@@ -46,11 +49,6 @@ export function Products(){
         }
     }, [ activeCategories, products ])
 
-    const user = localStorage.getItem('codeburger:userData')
-    if(!user){
-        return <Navigate to="/login" replace />;
-    }
-
     return (
         <Container>
             <ProductsImg src={ProductsLogo} alt="logo dos produtos" />
@@ -74,6 +72,7 @@ export function Products(){
     )
 }
 
+
 Products.propTypes = {
-    component:PropTypes.oneOfType([PropTypes.func, PropTypes.element])
+    location: PropTypes.object
 }
