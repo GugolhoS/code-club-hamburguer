@@ -16,8 +16,6 @@ In the creation of the API, Express, JWT, yup, the uuid library, and Sequelize a
 
 In the part of the admin screen, the MUI library was used to use the icons and create the tables
 
-# GIF Apresentação CodeBurger
-
 # Admin screen:
 ![image](https://github.com/GugolhoS/code-club-hamburguer/assets/92238035/dad15785-c159-408f-8e6b-7edb953559c0)
 
